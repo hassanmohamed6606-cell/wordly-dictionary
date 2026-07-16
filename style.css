@@ -77,3 +77,9 @@ button {
     background-color: black;
     color: white;
 }
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: gray;
+    font-size: 14px;
+}
