@@ -37,6 +37,8 @@ function searchWord(event) {
 
             displayWord(data[0]);
 
+            wordInput.value = "";
+
         })
 
         .catch(error => {
