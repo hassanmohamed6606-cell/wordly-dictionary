@@ -85,7 +85,7 @@ function displayWord(wordData) {
         <p><strong>Synonyms:</strong> ${synonyms}</p>
 
         <p>
-            <a href="${source}" target="_blank">
+            <a href="${source}" target="_blank" rel="noopener noreferrer">
                 Source
             </a>
         </p>
