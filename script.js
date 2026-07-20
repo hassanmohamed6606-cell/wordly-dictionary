@@ -3,6 +3,7 @@ const wordInput = document.getElementById("wordInput");
 const result = document.getElementById("result");
 const savedWords = document.getElementById("savedWords");
 const themeBtn = document.getElementById("themeBtn");
+const counter = document.getElementById("count");
 
 form.addEventListener("submit", searchWord);
 
@@ -105,6 +106,10 @@ function displayWord(wordData) {
     });
 
 }
+function updateCount() {
+
+    counter.textContent = `Saved Words: ${savedWords.children.length}`;
+}
 
 function saveWord(word) {
 
@@ -121,12 +126,16 @@ function saveWord(word) {
     removeBtn.addEventListener("click", function () {
 
         li.remove();
+        
+        updateCount();
 
     });
 
     li.appendChild(removeBtn);
 
     savedWords.appendChild(li);
+
+    updateCount();
 
 }
 
