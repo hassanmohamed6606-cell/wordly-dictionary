@@ -14,6 +14,8 @@ function searchWord(event) {
 
     const word = wordInput.value.trim();
 
+    result.textContent = "Loading...";
+    
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
 
         .then(response => {
