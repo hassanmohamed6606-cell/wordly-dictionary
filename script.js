@@ -14,8 +14,13 @@ function searchWord(event) {
 
     const word = wordInput.value.trim();
 
+    if (word === "") {
+    result.textContent = "Please enter a word.";
+    return;
+}
+
     result.textContent = "Loading...";
-    
+
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
 
         .then(response => {
