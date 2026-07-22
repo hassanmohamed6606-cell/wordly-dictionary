@@ -139,6 +139,11 @@ function updateCount() {
 
 function saveWord(word) {
 
+    if ( Array.from( savedWords.children).some(li => li.firstChild.textContent === word)) {
+        alert("Word already saved!");
+        return;
+    }
+
     const li = document.createElement("li");
 
     li.textContent = word;
