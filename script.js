@@ -59,6 +59,10 @@ function displayWord(wordData) {
 
     const phonetic = wordData.phonetic || "N/A";
 
+    const audio = wordData.phonetics.find(p => p.audio && p.audio.trim() !== "")?.audio || "";
+
+    console.log(audio);
+
     const partOfSpeech = wordData.meanings[0].partOfSpeech;
 
     const definition = wordData.meanings[0].definitions[0].definition;
@@ -76,6 +80,16 @@ function displayWord(wordData) {
         <h2>${word}</h2>
 
         <p><strong>Pronunciation:</strong> ${phonetic}</p>
+
+        ${
+           audio
+                ? `
+                <button id="playAudio">
+                     🔊 Play Pronunciation
+                </button>
+                `
+                : ""
+         }
 
         <p><strong>Part of Speech:</strong> ${partOfSpeech}</p>
 
@@ -104,6 +118,18 @@ function displayWord(wordData) {
         saveWord(word);
 
     });
+
+    const playBtn = document.getElementById("playAudio");
+
+    if (playBtn && audio) {
+       playBtn.addEventListener("click", () => {
+          const pronunciation = new Audio(audio);
+
+          pronunciation.play()
+            .then(() => console.log("Playing..."))
+            .catch(err => console.error(err));
+       });
+}
 
 }
 function updateCount() {
