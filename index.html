@@ -9,39 +9,40 @@
 </head>
 <body>
 
-    <div class="container">
+    <header>
+        <h1> Wordly Dictionary</h1>
+    </header>
 
-        <h1>Wordly Dictionary</h1>
+    <main class="container">
+
+      <section>
 
         <form id="searchForm">
 
             <input
-                type="text"
-                id="wordInput"
-                placeholder="Enter a word..."
-                required
-            >
-
-            <button id="searchBtn" type="submit">
-                Search
-            </button>
-
+             type="text"
+             id="wordInput"
+             placeholder="Enter a word.."
+             required
+           >
+           <button type="submit">
+            Search
+           </button>
         </form>
 
-        <button id="themeBtn">
-            Change Theme
-        </button>
+      <button id="themeBtn">
+        Change Theme
+      </button>
 
-        <div id="result"></div>
-
-        <h2>Saved Words</h2>
-
-        <p id="count">Saved Words: 0</p>
-
-     <ul id="savedWords"></ul>
-
-
-    </div>
+     </section>
+     <section id="result"></section>
+   
+     <section>
+         <h2> Saved Words</h2>
+         <p id="count"> Saved words: 0</p>
+         <ul id="savedWords"></ul>
+    </section>
+</main>
 
  <footer>
     <p> Created by Mohamed Hassan &copy; 2026</p>
